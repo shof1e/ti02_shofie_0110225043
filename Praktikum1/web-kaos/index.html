@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaos Programmer - NFStore.com</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">SopiStore.com</div>
+            <nav>
+                <a href="#">Fashion Stylish</a>
+                <a href="#">Fashion Wanita</a>
+                <a href="#">Fashion Muslim</a>
+            </nav>
+            <div class="header-right">
+                <input type="search" placeholder="Search">
+                <a href="#" class="cart">Cart (1)</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb container">
+        <a href="#">Home</a> > <a href="#">Fashion Pria</a> > Kaos Stylish
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="product-container">
+            <!-- Product Images -->
+            <div class="product-images">
+                <div class="main-image">
+                    <div class="placeholder-image">
+                        <svg viewBox="0 0 200 200"></svg>
+                    </div>
+                </div>
+                <div class="thumbnail-images">
+                    <div class="thumbnail">
+                        <svg viewBox="0 0 50 50"></svg>
+                    </div>
+                    <div class="thumbnail">
+                        <svg viewBox="0 0 50 50"></svg>
+                    </div>
+                    <div class="thumbnail">
+                        <svg viewBox="0 0 50 50"></svg>
+                    </div>
+                </div>
+                <button class="action-btn">Pesan</button>
+            </div>
+
+            <!-- Product Info -->
+            <div class="product-info">
+                <h1>Kaos Lunar Luxe</h1>
+                <p class="price">Rp 100.000</p>
+                <p class="stock">***** 1 Juta ulasan</p>
+                <p class="variant">Pilih Varian</p>
+
+                <div class="options">
+                    <div class="option-group">
+                        <label>Warna</label>
+                        <div class="color-options">
+                            <button class="color-btn" data-color="Hitam">Hitam</button>
+                            <button class="color-btn" data-color="Putih">Putih</button>
+                            <button class="color-btn" data-color="Navy">Navy</button>
+                            <button class="color-btn" data-color="Army">Army</button>
+                        </div>
+                    </div>
+
+                    <div class="option-group">
+                        <label>Ukuran</label>
+                        <div class="size-options">
+                            <button class="size-btn">S</button>
+                            <button class="size-btn">M</button>
+                            <button class="size-btn">L</button>
+                            <button class="size-btn">XL</button>
+                            <button class="size-btn">XXL</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="description">
+                    <h3>Deskripsi Produk</h3>
+                    <p>Ingin tampil simpel tapi tetap keren? Kaos Lunar Luxe hadir untuk kamu yang mengutamakan kenyamanan dan gaya dalam satu paket.
+                        Dirancang dengan bahan pilihan dan jahitan berkualitas, kaos ini siap menemani setiap aktivitasmu — dari hangout bareng teman sampai santai di rumah.</p>
+                    <p>Detail Produk: Regulae Fit, Style Kerah O-neck, Tersedia dalam pilihan warna netral dan trendi, Jahitan rapi dan kuat.</p>
+                    <p>Cocok dipadukan dengan jeans, chino, atau jogger untuk gaya kasual yang keren.
+                        Ideal untuk dipakai ke kampus, nongkrong, atau sekadar hangout santai.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Color button functionality
+        const colorBtns = document.querySelectorAll('.color-btn');
+        colorBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                colorBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Size button functionality
+        const sizeBtns = document.querySelectorAll('.size-btn');
+        sizeBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                sizeBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
