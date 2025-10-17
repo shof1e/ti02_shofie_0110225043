@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pemesanan Barang</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class ="navbar">
+        <a href="index.html">Home</a>
+        <a href="#">Generate Link</a>
+        <a href="#">Transaction History</a>
+        <a href="#">Policy</a>
+        <a href="#">Logout</a>
+    </div>
+
+    <div class="container">
+        <form action="output.php" method="POST" enctype="multipart/form-data">
+            <div class="form-layout">
+                <div class="left-section">
+                    <div class="image-upload">
+                        <div class="image-preview" id="imagePreview">
+                            <span></span>
+                        </div>
+                        <input type="file" name="product_image" id="productImage" accept="image/*" onchange="previewImage(event)">
+                        <button type="button" onclick="document.getElementById('productImage').click()">Upload Picture</button>
+                    </div>
+                </div>
+
+                <div class="right-section">
+                    <form action="output.php" method="POST" id ="barang-order-form">
+                    <div class="form-group">
+                        <label>Title Here :</label>
+                        <input type="text" name="title" required>
+                    </div>
+
+                    <div class="form-box">
+                        <h4>Description :</h4>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Year :</label>
+                        <input type="text" name="year" required placeholder="2009">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Model :</label>
+                        <input type="text" name="model">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Condition :</label>
+                        <input type="text" name="condition" required placeholder="Mint">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Total Amount :</label>
+                        <input type="text" name="total_amount" required placeholder="£800">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Account Number :</label>
+                        <input type="text" name="account_number"required placeholder="123-456-789-0">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Bank :</label>
+                        <select name="bank">
+                            <option value="BTN">BTN</option>
+                            <option value="BCA">BCA</option>
+                            <option value="Mandiri">Mandiri</option>
+                            <option value="BNI">BNI</option>
+                            <option value="BRI">BRI</option>
+                            <option value="Bank Syariah">Bank Syariah</option>
+                            <option value="CIMB Niaga">CIMB Niaga</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Account Holder :</label>
+                        <input type="text" name="account_holder" placeholder="Name Here">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Transaction :</label>
+                        <select name="transaction" id="transactionSelect">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                        <p class="note">* if the transaction is for 3 person, choose 3 from the drop-down list</p>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label>
+                            <input type="checkbox" name="send_mobile" value="yes" checked>
+                            Send to Mobile Phone
+                        </label>
+                        <label>
+                            <input type="checkbox" name="send_email" value="yes" checked>
+                            Send to Email
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Send to Mobile Phone :</label>
+                        <input type="text" name="mobile_phones" placeholder="1234567890, 1234567891">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Send to Email :</label>
+                        <input type="email" name="emails" placeholder="mfmm2g13@soton.ac.uk, fya_06@yahoo.com">
+                    </div>
+
+                    <button type="submit" class="submit-btn">Generate Nsbr Link</button>
+                </div>
+            </div>
+        </form>
+    </div>
+ 
+    <script>
+        function previewImage(event) {
+            const preview = document.getElementById('imagePreview');
+            const file = event.target.files[0];
+            
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.style.backgroundImage = `url(${e.target.result})`;
+                    preview.style.backgroundSize = 'cover';
+                    preview.style.backgroundPosition = 'center';
+                    preview.innerHTML = '';
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+</body>
+</html>
