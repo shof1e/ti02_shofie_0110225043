@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lucida Sans',Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #f5f5dc;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header Styling */
+#header {
+    padding: 30px 20px;
+    text-align: center;
+    background-color: bisque;
+}
+
+#header h1 {
+    color: #0000ff;
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+blockquote {
+    background-color: #ffeb3b;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    border-left: 5px solid #fbc02d;
+    font-style: serif;
+    color: #000;
+}
+
+#soekarno {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+    font-style: serif;
+}
+
+/* Navigation Menu */
+div > ul {
+    list-style: none;
+    background-color: #8b6914;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+div > ul li {
+    margin: 0;
+}
+
+div > ul li a {
+    display: block;
+    padding: 15px 30px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+/* Image Gallery */
+.gambar {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px 20px;
+    background-color: #f5f5dc;
+}
+
+.gambar img {
+    width: 300px;
+    height: 250px;
+    object-fit: cover;
+    border: 3px solid #8b6914;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Drop Cap - Huruf B Besar */
+.isi p:first-of-type::first-letter {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #0000ff;
+    float: left;
+    line-height: 0.9;
+    margin-right: auto;
+    margin-top: auto;
+}
+
+/* Profile Section */
+#profil {
+    text-align: left;
+    line-height: 1.8;
+    max-width: 2000px;
+    margin: auto;
+    background-color: #f5f5dc;
+}
+
+#profil h3 {
+    line-height: 1.8;
+    text-align: left;
+    color: #000;
+    font-size: 1.8em; 
+}
+#profil ul {
+    margin-left: 20px;
+}
+
+#profil ul li {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+/* Breeding Section */
+#beternak {
+    text-align: left;
+    max-width: 1950px;
+    margin: auto;
+    background-color: #f5f5dc;
+}
+
+#beternak h3 {
+    color: #000;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+#beternak ol {
+    margin-left: 10px;
+}
+
+#beternak ol li {
+    margin-bottom: 10px;
+}
+
+#beternak h4 {
+    color: #000;
+    margin-bottom: 10px;
+}
+
+#beternak p {
+    text-align: justify;
+}
+
+/* Photo Gallery */
+.foto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 30px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.foto img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border: 3px solid #8b6914;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.foto img:hover {
+    transform: scale(1.05);
+}
+
+/* Promo Section */
+.promo {
+    padding: 40px 20px;
+    text-align: center;
+    margin: 30px auto;
+    max-width: 1000px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.promo h2 {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
+.promo h3 {
+    color:black;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    line-height: 2;
+}
+
+.promo del {
+    color: #888;
+}
+
+.promo strong {
+    color: #d32f2f;
+    font-size: 1.3em;
+}
+
+#Wa {
+    color: green;
+    font-weight: bold;
+}
+
+.promo h4 {
+    color:blue;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.promo ol {
+    list-style-position: inside;
+    font-size: 1.2em;
+}
+
+.promo ol li {
+    margin: 10px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #header h1 {
+        font-size: 1.8em;
+    }
+    
+    .gambar {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .gambar img {
+        width: 90%;
+    }
+    
+    div > ul {
+        flex-direction: column;
+    }
+    
+    .foto {
+        grid-template-columns: 1fr;
+    }
+}
