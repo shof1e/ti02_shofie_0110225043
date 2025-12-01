@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menghitung Biaya Parkir</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Menghitung Biaya Parkir</h2>
+        <p>Biaya parkir: Rp 3.000 untuk 2 jam pertama, tambahan Rp 1.000 per jam berikutnya</p>
+        
+        <label>Jam Masuk:</label>
+        <input type="number" id="jamMasuk">
+        
+        <label>Jam Keluar:</label>
+        <input type="number" id="jamKeluar">
+        
+        <button id="btnHitung">Hitung Biaya Parkir</button>
+        
+        <div class="result" id="hasilParkir"></div>
+    </div>
+
+    <script>
+        function hitungBiayaParkir() {
+            const jamMasuk = parseInt(document.getElementById('jamMasuk').value);
+            const jamKeluar = parseInt(document.getElementById('jamKeluar').value);
+            const hasil = document.getElementById('hasilParkir');
+            
+            if (isNaN(jamMasuk) || isNaN(jamKeluar)) {
+                alert('Mohon masukkan jam masuk dan jam keluar!');
+                return;
+            }
+            
+            const lama = jamKeluar - jamMasuk;
+            let biaya;
+            
+            if (lama <= 2) {
+                biaya = 3000;
+            } else {
+                biaya = 3000 + (lama - 2) * 1000;
+            }
+            
+            hasil.innerHTML = `
+                <strong>Lama Parkir:</strong> ${lama} jam<br>
+                <strong>Biaya Parkir:</strong> Rp ${biaya.toLocaleString('id-ID')}
+            `;
+            hasil.style.display = 'block';
+        }
+        
+        document.getElementById('btnHitung').addEventListener('click', hitungBiayaParkir);
+    </script>
+</body>
+</html>
